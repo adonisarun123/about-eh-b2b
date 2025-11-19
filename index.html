@@ -36,7 +36,7 @@
     <script type="text/babel">
         const { useState } = React;
 
-        // --- Icons Components (Inline SVGs for standalone compatibility) ---
+        // --- Icons Components ---
         const Users = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>;
         const MapPin = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>;
         const ShieldCheck = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>;
@@ -47,15 +47,21 @@
         const Award = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>;
         const CheckCircle2 = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>;
         const ArrowRight = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>;
+        const Building2 = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>;
+        const GraduationCap = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>;
+        const Handshake = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m11 17 2 2a1 1 0 1 0 3-1.47l-10-10a2 2 0 0 0-2.83 0l-1 1a2 2 0 0 0 0 2.83l8.03 8.03"/><path d="m19.07 4.93-10 10a2 2 0 0 0 0 2.83l1 1a2 2 0 0 0 2.83 0l8.03-8.03a2 2 0 0 0 0-2.83l-1-1a2 2 0 0 0-1.86 0"/></svg>;
+        const HeartHandshake = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M19 14c1.49-1.28 3.6-1.28 5.14 0 .34.66.17 1.36 0 1.45L12 22l-12.14-6.55c-.17-.09-.34-.79 0-1.45 1.54-1.28 3.65-1.28 5.14 0L12 19.9l7-5.9Z"/><path d="M12 5a7 7 0 0 1 7 7"/><path d="M12 5a7 7 0 0 0-7 7"/></svg>;
+        const Home = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>;
+        const Star = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" className={className}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>;
 
         const Proposal = () => {
           const [activeTab, setActiveTab] = useState('executive');
 
           const navigation = [
             { id: 'executive', label: 'Executive Brief' },
+            { id: 'partnership', label: 'Partnership Models' },
             { id: 'ecosystem', label: 'The Ecosystem' },
-            { id: 'services', label: 'Service Portfolio' },
-            { id: 'advantage', label: 'The Ezy Advantage' }
+            { id: 'services', label: 'Service Portfolio' }
           ];
 
           return (
@@ -93,7 +99,7 @@
                     </div>
                   </div>
                   
-                  {/* Mobile Tab Bar (Visible only on small screens) */}
+                  {/* Mobile Tab Bar */}
                    <div className="md:hidden flex overflow-x-auto pb-2 gap-4 scrollbar-hide">
                       {navigation.map((item) => (
                         <button
@@ -116,7 +122,7 @@
               <main className="max-w-5xl mx-auto px-6 py-12">
                 
                 {/* Header Section */}
-                <header className="mb-16 text-center">
+                <header className="mb-12 text-center">
                   <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-800 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-blue-100">
                     <Award className="w-4 h-4" /> DWSSC Training Partner
                   </div>
@@ -126,63 +132,194 @@
                   </h1>
                   <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                     Prepared exclusively for <span className="font-semibold text-slate-900">Paradigm Integrated Facility Services</span>.
-                    Bridging the gap between rural talent potential and urban facility excellence.
                   </p>
                 </header>
 
                 {/* Content Switcher */}
                 <div className="transition-all duration-500 ease-in-out">
                   
-                  {/* EXECUTIVE BRIEF */}
+                  {/* EXECUTIVE BRIEF (Revised) */}
                   {activeTab === 'executive' && (
                     <div className="space-y-8 animate-fadeIn">
+                      
+                      {/* Company Snapshot - Executive Summary (Updated with Data) */}
+                      <div className="mb-8">
+                         <h3 className="text-xl font-bold text-blue-900 mb-4">EzyHelpers at a Glance</h3>
+                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            {/* Stat 1 */}
+                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">
+                                <div className="text-3xl font-extrabold text-blue-900 mb-1">10,000+</div>
+                                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Families Served</div>
+                            </div>
+                            {/* Stat 2 */}
+                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">
+                                <div className="text-3xl font-extrabold text-blue-900 mb-1">5,000+</div>
+                                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Verified Helpers</div>
+                            </div>
+                            {/* Stat 3 */}
+                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">
+                                <div className="text-3xl font-extrabold text-blue-900 mb-1 flex items-center justify-center gap-1">
+                                    4.8 <Star className="w-5 h-5 text-yellow-400" />
+                                </div>
+                                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Cust. Rating</div>
+                            </div>
+                            {/* Stat 4 */}
+                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">
+                                <div className="text-3xl font-extrabold text-blue-900 mb-1">₹2.5 Cr+</div>
+                                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Economic Impact</div>
+                            </div>
+                         </div>
+                         <div className="mt-4 bg-blue-50 p-4 rounded-xl border border-blue-100 flex flex-col md:flex-row justify-between items-center text-sm text-blue-800 px-6">
+                            <span className="font-semibold">Geographic Reach:</span>
+                            <span className="flex items-center gap-2"><MapPin className="w-4 h-4"/> 250+ Service Locations across 9 Major Cities</span>
+                         </div>
+                      </div>
+
                       <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
                         <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
                           <Briefcase className="text-blue-700" /> 
-                          The Opportunity
+                          The Paradigm Opportunity
                         </h2>
                         <p className="text-slate-600 leading-relaxed mb-6">
                           In the facility management sector, the challenge is rarely just "finding bodies." It is finding 
-                          reliable, trained, and vetted personnel who stay. EzyHelpers proposes a strategic alliance to 
-                          streamline Paradigm's workforce acquisition by leveraging our unique <strong>Source-Train-Deploy</strong> model.
+                          reliable, trained, and vetted personnel who stay. EzyHelpers proposes a multi-tiered strategic alliance to 
+                          transform Paradigm's workforce acquisition and create new revenue streams.
                         </p>
-                        <div className="grid md:grid-cols-2 gap-6 mt-8">
-                          <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
-                            <h3 className="font-bold text-slate-900 mb-2">The Paradigm Need</h3>
-                            <ul className="space-y-3">
-                              <li className="flex items-start gap-2 text-sm text-slate-600">
-                                <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2"></div>
-                                Reduced attrition & turnover costs.
-                              </li>
-                              <li className="flex items-start gap-2 text-sm text-slate-600">
-                                <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2"></div>
-                                Consistent, standardized skill levels.
-                              </li>
-                              <li className="flex items-start gap-2 text-sm text-slate-600">
-                                <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2"></div>
-                                Rapid scalability for new sites.
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                            <h3 className="font-bold text-blue-900 mb-2">The EzyHelpers Solution</h3>
-                            <ul className="space-y-3">
-                              <li className="flex items-start gap-2 text-sm text-blue-800">
-                                <CheckCircle2 className="w-4 h-4 mt-0.5" />
-                                <strong>DWSSC Certified:</strong> Pre-trained staff, not raw recruits.
-                              </li>
-                              <li className="flex items-start gap-2 text-sm text-blue-800">
-                                <CheckCircle2 className="w-4 h-4 mt-0.5" />
-                                <strong>Rural Pipeline:</strong> Access to deep, untapped labor pools.
-                              </li>
-                              <li className="flex items-start gap-2 text-sm text-blue-800">
-                                <CheckCircle2 className="w-4 h-4 mt-0.5" />
-                                <strong>High-Trust Vetting:</strong> Leveraging our B2C background.
-                              </li>
-                            </ul>
-                          </div>
+                        
+                        <div className="grid md:grid-cols-2 gap-6 mt-6">
+                            <div className="p-4 bg-slate-50 rounded-lg">
+                                <h4 className="font-bold text-slate-900 mb-2">1. Operational Efficiency</h4>
+                                <p className="text-sm text-slate-600">Solving the sourcing bottleneck for Housekeeping, Security, and MEP roles through our rural pipeline.</p>
+                            </div>
+                            <div className="p-4 bg-slate-50 rounded-lg">
+                                <h4 className="font-bold text-slate-900 mb-2">2. New Revenue Streams</h4>
+                                <p className="text-sm text-slate-600">Monetizing Paradigm's presence in societies by offering premium B2C domestic services to residents.</p>
+                            </div>
                         </div>
                       </div>
+                    </div>
+                  )}
+
+                  {/* PARTNERSHIP MODELS (Updated) */}
+                  {activeTab === 'partnership' && (
+                    <div className="space-y-8 animate-fadeIn">
+                        <div className="text-center max-w-3xl mx-auto mb-8">
+                            <h2 className="text-2xl font-bold text-slate-900">Four Pillars of Engagement</h2>
+                            <p className="text-slate-600 mt-2">We propose a flexible partnership model ranging from pure staffing to strategic revenue sharing.</p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-6">
+                            
+                            {/* Model 1: Staffing */}
+                            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                                <div className="flex items-center justify-between mb-4">
+                                    <div className="bg-blue-100 p-3 rounded-lg text-blue-700 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                        <Briefcase className="w-6 h-6" />
+                                    </div>
+                                    <span className="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">Model 1</span>
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">Corporate Staffing Partner</h3>
+                                <p className="text-sm text-slate-600 mb-4">
+                                    Direct sourcing for Paradigm's core facility roles. We act as your primary recruitment engine.
+                                </p>
+                                <ul className="space-y-2 text-sm text-slate-700">
+                                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Housekeeping & Janitorial</li>
+                                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Plumbers, Electricians, Carpenters</li>
+                                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Security Personnel</li>
+                                </ul>
+                                <div className="mt-6 pt-4 border-t border-slate-100 text-sm font-semibold text-blue-900">
+                                    Commercial: Sourcing Fee / Placement
+                                </div>
+                            </div>
+
+                            {/* Model 2: Revenue Share */}
+                            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                                <div className="flex items-center justify-between mb-4">
+                                    <div className="bg-green-100 p-3 rounded-lg text-green-700 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                                        <Handshake className="w-6 h-6" />
+                                    </div>
+                                    <span className="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">Model 2</span>
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">Society Revenue Share</h3>
+                                <p className="text-sm text-slate-600 mb-4">
+                                    Paradigm introduces EzyHelpers as the "Preferred Partner" for residents in managed societies.
+                                </p>
+                                <ul className="space-y-2 text-sm text-slate-700">
+                                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Live-in Maids & Cooks</li>
+                                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Nannies & Elderly Care</li>
+                                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Full-time House Helps</li>
+                                </ul>
+                                <div className="mt-6 pt-4 border-t border-slate-100 text-sm font-semibold text-green-800">
+                                    Commercial: Commission to Paradigm per placement
+                                </div>
+                            </div>
+
+                            {/* Model 3: Training Partner */}
+                            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                                <div className="flex items-center justify-between mb-4">
+                                    <div className="bg-orange-100 p-3 rounded-lg text-orange-700 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                                        <GraduationCap className="w-6 h-6" />
+                                    </div>
+                                    <span className="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">Model 3</span>
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">The Skilling Academy</h3>
+                                <p className="text-sm text-slate-600 mb-4">
+                                    Leverage our DWSSC partnership to elevate service standards within your properties.
+                                </p>
+                                <div className="space-y-3">
+                                    <div className="bg-slate-50 p-3 rounded text-sm">
+                                        <strong>Internal:</strong> Upskilling Paradigm's existing housekeeping staff on SOPs and soft skills.
+                                    </div>
+                                    <div className="bg-slate-50 p-3 rounded text-sm">
+                                        <strong>External:</strong> Training independent domestic helps working in Paradigm-managed societies (value-add to RWAs).
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Model 4: EzyNest */}
+                            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                                <div className="flex items-center justify-between mb-4">
+                                    <div className="bg-purple-100 p-3 rounded-lg text-purple-700 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                        <Home className="w-6 h-6" />
+                                    </div>
+                                    <span className="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">Model 4</span>
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">EzyNest: Workforce Welfare</h3>
+                                <p className="text-sm text-slate-600 mb-4">
+                                    Solving the urban housing crisis for female staff to improve retention and safety.
+                                </p>
+                                <p className="text-sm text-slate-600 mb-4 leading-relaxed">
+                                    Paradigm can leverage <strong>EzyNest</strong> facilities to provide safe, managed accommodation for their female housekeeping staff. This dramatically reduces attrition caused by housing instability.
+                                </p>
+                                <div className="mt-2 inline-flex items-center gap-2 text-xs font-semibold bg-purple-50 text-purple-700 px-3 py-1 rounded-full">
+                                    <ShieldCheck className="w-3 h-3" /> Safe Migration Solution
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {/* New Strategic Referral Section */}
+                        <div className="mt-8 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+                            <div>
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="bg-white/10 p-2 rounded-lg">
+                                        <Users className="w-6 h-6 text-blue-300" />
+                                    </div>
+                                    <h3 className="text-xl font-bold">Strategic Referral Alliance</h3>
+                                </div>
+                                <p className="text-slate-300 text-sm max-w-xl leading-relaxed">
+                                    Turn your workforce into a recruitment engine. Paradigm refers their existing staff's network (Male/Female friends & family) to EzyHelpers. We handle the vetting, training, and deployment.
+                                </p>
+                                <div className="mt-4 flex gap-4 text-sm font-medium text-blue-200">
+                                    <span className="flex items-center gap-1"><CheckCircle2 className="w-4 h-4"/> Higher Retention (Social Glue)</span>
+                                    <span className="flex items-center gap-1"><CheckCircle2 className="w-4 h-4"/> Zero Sourcing Cost</span>
+                                </div>
+                            </div>
+                            <div className="flex-shrink-0">
+                                <button className="bg-white text-slate-900 px-6 py-3 rounded-lg font-bold text-sm hover:bg-blue-50 transition-colors">
+                                    Activate Referral Loop
+                                </button>
+                            </div>
+                        </div>
                     </div>
                   )}
 
@@ -197,7 +334,7 @@
                           <MapPin className="w-10 h-10 text-blue-600 mb-4" />
                           <h3 className="text-xl font-bold mb-3">Rural Sourcing Hubs</h3>
                           <p className="text-slate-600 text-sm leading-relaxed">
-                            We don't wait for candidates to come to the city. We work with partners in remote and rural areas to identify talent at the source, creating a dedicated migration pipeline exclusively for our clients.
+                            We don't wait for candidates to come to the city. We work with partners in remote and rural areas to identify talent at the source, creating a dedicated migration pipeline.
                           </p>
                         </div>
 
@@ -207,7 +344,7 @@
                           <Award className="w-10 h-10 text-blue-600 mb-4" />
                           <h3 className="text-xl font-bold mb-3">DWSSC Skilling</h3>
                           <p className="text-slate-600 text-sm leading-relaxed">
-                            As training partners of the Domestic Workers Sector Skill Council, we ensure staff understands SOPs, hygiene, and professional conduct before they reach your facility.
+                            As training partners of the Domestic Workers Sector Skill Council, we ensure staff understands SOPs, hygiene, and professional conduct.
                           </p>
                         </div>
 
@@ -217,7 +354,7 @@
                           <ShieldCheck className="w-10 h-10 text-blue-600 mb-4" />
                           <h3 className="text-xl font-bold mb-3">Behavioral Vetting</h3>
                           <p className="text-slate-600 text-sm leading-relaxed">
-                            Born from our experience in Nanny & Elderly care services, we apply rigorous "High-Trust" background verification. If we trust them with a family, you can trust them with your facility.
+                            Born from our experience in Nanny & Elderly care services, we apply rigorous "High-Trust" background verification.
                           </p>
                         </div>
                       </div>
@@ -318,15 +455,15 @@
                         </div>
                       </div>
 
-                      {/* Specialized Care (The Trust Anchor) */}
+                      {/* Specialized Care */}
                       <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 overflow-hidden">
                         <div className="bg-blue-100/50 p-4 border-b border-blue-100 flex items-center gap-2">
                           <Users className="w-5 h-5 text-blue-700" />
-                          <h3 className="font-bold text-blue-900">Specialized Care (High Trust)</h3>
+                          <h3 className="font-bold text-blue-900">B2C Value-Add Services</h3>
                         </div>
                         <div className="p-6">
                           <p className="text-sm text-slate-600 mb-4 italic">
-                            Our roots in high-trust domestic care ensure all our staff have high integrity.
+                            Available for resident deployment under the Revenue Share model.
                           </p>
                           <div className="flex flex-wrap gap-2">
                              <span className="text-xs font-medium bg-white border border-blue-200 px-2 py-1 rounded text-blue-800">Elderly Care</span>
@@ -337,67 +474,6 @@
                         </div>
                       </div>
 
-                    </div>
-                  )}
-
-                   {/* THE ADVANTAGE */}
-                   {activeTab === 'advantage' && (
-                    <div className="space-y-8 animate-fadeIn">
-                      <div className="bg-white rounded-2xl p-8 border border-slate-200">
-                        <h2 className="text-2xl font-bold mb-6 text-slate-900">Why Partner With EzyHelpers?</h2>
-                        
-                        <div className="space-y-6">
-                          <div className="flex gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700">
-                              <Truck className="w-6 h-6" />
-                            </div>
-                            <div>
-                              <h3 className="font-bold text-lg text-slate-900">The Supply Chain Solution</h3>
-                              <p className="text-slate-600 mt-1">
-                                Most agencies fish in the same dried-up urban pond. We own the river. By sourcing directly from rural partners, we solve the "labor shortage" at the root level.
-                              </p>
-                            </div>
-                          </div>
-
-                          <div className="w-full h-px bg-slate-100"></div>
-
-                          <div className="flex gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700">
-                              <ShieldCheck className="w-6 h-6" />
-                            </div>
-                            <div>
-                              <h3 className="font-bold text-lg text-slate-900">The "Nanny" Factor</h3>
-                              <p className="text-slate-600 mt-1">
-                                It sounds unusual, but it's our strength. Vetting a nanny for a newborn requires 10x more scrutiny than vetting a cleaner. We bring that same B2C-level behavioral screening to your B2B operations.
-                              </p>
-                            </div>
-                          </div>
-
-                          <div className="w-full h-px bg-slate-100"></div>
-
-                           <div className="flex gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-700">
-                              <Award className="w-6 h-6" />
-                            </div>
-                            <div>
-                              <h3 className="font-bold text-lg text-slate-900">Compliance Ready</h3>
-                              <p className="text-slate-600 mt-1">
-                                As DWSSC partners, our documentation, training standards, and government compliance are built-in, not added on.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="bg-blue-900 rounded-2xl p-8 text-center text-white">
-                        <h3 className="text-2xl font-bold mb-4">Ready for a Pilot?</h3>
-                        <p className="text-blue-100 mb-6 max-w-xl mx-auto">
-                          We are confident in our workforce. Let's start with a single site or a specific vertical (e.g., Housekeeping) for 30 days.
-                        </p>
-                        <button className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-3 rounded-lg font-bold transition-colors flex items-center gap-2 mx-auto">
-                          Initiate Partnership Discussion <ArrowRight className="w-4 h-4" />
-                        </button>
-                      </div>
                     </div>
                   )}
 
