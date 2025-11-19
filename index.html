@@ -53,6 +53,8 @@
         const HeartHandshake = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M19 14c1.49-1.28 3.6-1.28 5.14 0 .34.66.17 1.36 0 1.45L12 22l-12.14-6.55c-.17-.09-.34-.79 0-1.45 1.54-1.28 3.65-1.28 5.14 0L12 19.9l7-5.9Z"/><path d="M12 5a7 7 0 0 1 7 7"/><path d="M12 5a7 7 0 0 0-7 7"/></svg>;
         const Home = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>;
         const Star = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" className={className}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>;
+        const TrendingUp = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>;
+        const Target = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>;
 
         const Proposal = () => {
           const [activeTab, setActiveTab] = useState('executive');
@@ -138,11 +140,11 @@
                 {/* Content Switcher */}
                 <div className="transition-all duration-500 ease-in-out">
                   
-                  {/* EXECUTIVE BRIEF (Revised) */}
+                  {/* EXECUTIVE BRIEF */}
                   {activeTab === 'executive' && (
                     <div className="space-y-8 animate-fadeIn">
                       
-                      {/* Company Snapshot - Executive Summary (Updated with Data) */}
+                      {/* Company Snapshot */}
                       <div className="mb-8">
                          <h3 className="text-xl font-bold text-blue-900 mb-4">EzyHelpers at a Glance</h3>
                          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -196,11 +198,26 @@
                                 <p className="text-sm text-slate-600">Monetizing Paradigm's presence in societies by offering premium B2C domestic services to residents.</p>
                             </div>
                         </div>
+
+                        {/* Strategic Alignment Section */}
+                        <div className="mt-8 pt-8 border-t border-slate-100">
+                            <div className="flex gap-4">
+                                <div className="bg-blue-100 p-3 rounded-full h-fit text-blue-700">
+                                    <TrendingUp className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold text-slate-900">Matching Legacy with Ambition</h3>
+                                    <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+                                        Paradigm has built a 20-year legacy of excellence in facility management. EzyHelpers aligns with this long-term trajectory. We aren't just a vendor filling today's vacancies; we are building the digital sourcing infrastructure required to fuel your growth for the next decade.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                       </div>
                     </div>
                   )}
 
-                  {/* PARTNERSHIP MODELS (Updated) */}
+                  {/* PARTNERSHIP MODELS */}
                   {activeTab === 'partnership' && (
                     <div className="space-y-8 animate-fadeIn">
                         <div className="text-center max-w-3xl mx-auto mb-8">
@@ -297,8 +314,42 @@
                             </div>
                         </div>
                         
-                        {/* New Strategic Referral Section */}
-                        <div className="mt-8 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+                        {/* Training Evolution Section */}
+                        <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                            <div className="flex items-center gap-3 mb-6">
+                                <Target className="w-6 h-6 text-blue-700" />
+                                <h3 className="text-xl font-bold text-slate-900">The Partnership Evolution: Today vs. Tomorrow</h3>
+                            </div>
+                            <div className="grid md:grid-cols-2 gap-8">
+                                <div className="relative pl-6 border-l-2 border-blue-200">
+                                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
+                                    <h4 className="font-bold text-blue-900 mb-2">Today: Immediate Impact</h4>
+                                    <p className="text-sm text-slate-600 mb-3">
+                                        We solve your immediate volume needs by providing verified freshers and ITI graduates ready for standard deployment.
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="text-xs bg-slate-100 px-2 py-1 rounded text-slate-700">ITI Freshers (MEP)</span>
+                                        <span className="text-xs bg-slate-100 px-2 py-1 rounded text-slate-700">General Housekeeping</span>
+                                        <span className="text-xs bg-slate-100 px-2 py-1 rounded text-slate-700">Gardeners</span>
+                                    </div>
+                                </div>
+                                <div className="relative pl-6 border-l-2 border-dashed border-slate-300">
+                                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
+                                    <h4 className="font-bold text-slate-900 mb-2">Tomorrow: Strategic Skilling</h4>
+                                    <p className="text-sm text-slate-600 mb-3">
+                                        As our partnership matures, we evolve from a sourcing channel to a customized training academy, creating talent for your niche, hard-to-fill roles.
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="text-xs bg-blue-50 px-2 py-1 rounded text-blue-800 border border-blue-100">STP Operators</span>
+                                        <span className="text-xs bg-blue-50 px-2 py-1 rounded text-blue-800 border border-blue-100">Waste Management</span>
+                                        <span className="text-xs bg-blue-50 px-2 py-1 rounded text-blue-800 border border-blue-100">Advanced MEP</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Strategic Referral Section */}
+                        <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
                             <div>
                                 <div className="flex items-center gap-3 mb-2">
                                     <div className="bg-white/10 p-2 rounded-lg">
@@ -314,7 +365,7 @@
                                     <span className="flex items-center gap-1"><CheckCircle2 className="w-4 h-4"/> Zero Sourcing Cost</span>
                                 </div>
                             </div>
-                            <div className="flex-shrink-0">
+                            <div className="flex-shrink-0 mt-6 md:mt-0">
                                 <button className="bg-white text-slate-900 px-6 py-3 rounded-lg font-bold text-sm hover:bg-blue-50 transition-colors">
                                     Activate Referral Loop
                                 </button>
